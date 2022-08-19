@@ -1,0 +1,221 @@
+@import '../../../assets/sass/mixins';
+
+.departamentos{
+    background-color: #ffffff;
+    padding-top: 118px;
+
+    @include for_breakpoint(1199){
+        padding-top: 80px;
+    }
+
+    @include for_breakpoint(991){
+        padding-top: 40px;
+    }
+
+    h2{
+        color: var(--blue-strong);
+        font-family: barlow-bold;
+        font-size: 72px;
+        text-align: center;
+
+        &::after{
+            content: "";
+            display: block;
+            background-color: var(--blue);
+            width: 120px;
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 8px;
+            margin-bottom: 55px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include for_breakpoint(1699){
+            font-size: 68px;
+        }
+
+        @include for_breakpoint(1399){
+            font-size: 60px;
+        }
+        
+        @include for_breakpoint(1199){
+            font-size: 50px;
+            &::after{
+                width: 100px;
+                margin-bottom: 45px;
+            }
+        }
+
+        @include for_breakpoint(991){
+            text-align: center;
+            margin-top: 40px;
+            
+            &::after{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @include for_breakpoint(480){
+            font-size: 40px;
+        }
+        
+    }
+
+    h3{
+        color: var(--black);
+        font-size: 32px;
+        font-family: barlow-bold;
+
+        &.caract{
+            margin-left: calc(10% + 45px);
+        }
+
+        @include for_breakpoint(1699){
+            font-size: 30px;
+        }
+
+        @include for_breakpoint(1399){
+            font-size: 28px;
+        }
+
+        @include for_breakpoint(1199){
+            &.caract{
+                margin-left: 45px;
+            }
+        }
+
+        @include for_breakpoint(991){
+            text-align: center;
+        }
+
+        @include for_breakpoint(767){
+           &.caract{
+            margin-left: 0px;
+           }
+        }
+
+        @include for_breakpoint(480){
+            font-size: 25px;
+        }
+    }
+
+    ul{
+        list-style: none;
+        padding-left: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin-left: 10%;
+        margin-top: 30px;
+        li{
+            margin: 0px 20px 35px;
+            width: 130px;
+           .icon{
+            width: 90px;
+            height: 90px;
+            background-color: var(--blue-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            img{
+                max-width: 50px;
+                filter: invert(56%) sepia(15%) saturate(1291%) hue-rotate(129deg) brightness(102%) contrast(90%);
+            }
+           }
+
+           p{
+                color: #626262;
+                font-family: barlow-medium;
+                font-size: 18px;
+                text-align: center;
+           }
+        }
+        
+        &.lista{
+            color: #626262;
+            list-style-type: none;  
+            flex-direction: column; 
+            margin-left: 0px;
+
+            li{
+                font-size: 18px;
+                font-family: barlow-medium;
+                width: auto;
+                max-width: 330px;
+                padding: 15px 0px 18px 33px; 
+                margin: 0px;   
+                position: relative;
+
+                &:not(:last-of-type){
+                    border-bottom: 1px solid #e0e8e8; 
+                }
+                &::before{
+                    content: "\2022";
+                    color: var(--cyan);
+                    font-size: 30px;
+                    position: absolute;
+                    left: 0;
+                    top: 5%;
+                }
+            }
+
+        }
+
+        @include for_breakpoint(1599){
+            li{
+                width: 120px;
+                margin: 0px 15px 35px;
+            }
+        }
+
+        @include for_breakpoint(1399){
+            li{
+                font-size: 17px;
+                width: 120px;
+                margin: 0px 15px 35px;
+                p{
+                    font-size: 17px;
+                }
+            }
+
+            &.lista{
+                li{
+                    font-size: 17px;
+                    max-width: 280px;
+                }
+            }
+        }
+
+        @include for_breakpoint(1199){
+            margin-left: 0px;
+        }
+
+        @include for_breakpoint(991){
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            &.lista{
+                padding-left: 60px;
+            }
+        }
+
+        @include for_breakpoint(480){
+            &.lista{
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .slider{
+        margin-top: 40px;
+
+        @include for_breakpoint(991){
+            margin-bottom: 55px;
+        }
+    }
+}

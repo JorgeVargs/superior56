@@ -1,0 +1,146 @@
+@import '../../../assets/sass/mixins';
+
+.proyecto{
+    padding: 90px 0px;
+    @include for_breakpoint(1499){
+        padding: 130px 0px 90px;
+    }
+    @include for_breakpoint(1199){
+        padding: 190px 0px 90px;
+    }
+    .back-image{
+        background-color: var(--gold-color);
+        padding: 50px 0px;
+        max-width: 584px;
+        min-height: 645px;
+        width: 100%;
+        border-top-right-radius: 60px;
+        border-bottom-right-radius: 60px;
+        img{
+            border: 6px solid white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        @include for_breakpoint(1699){
+            min-height: 590px;
+            img{
+                max-width: 95%;
+            }
+        }
+
+        @include for_breakpoint(1499){
+            max-width: 540px;
+        }
+
+        @include for_breakpoint(1399){
+            min-height: 500px;
+            max-width: 500px;
+        }
+
+        @include for_breakpoint(1199){
+            min-height: 480px;
+            max-width: 400px;
+        }
+
+        @include for_breakpoint(991){
+            min-height: 540px;
+            max-width: 460px;
+           img{
+                width: 750px;
+                max-width: none;
+           }
+        }
+
+        @include for_breakpoint(767){
+            background-color: transparent;
+            min-height: auto;
+            max-width: none;
+            padding: 40px 0px;
+            &::before{
+                content: "";
+                position: absolute;
+                background-color: var(--gold-color);
+                left: 0;
+                top: 0;
+                width: 70%;
+                height: 100%;
+                border-top-right-radius: 60px;
+                border-bottom-right-radius: 60px;
+            }
+           img{
+            position: relative;
+            width: 100%;
+           }
+        }
+    }
+    h2{
+        color: var(--gold-color);
+        font-family: barlow-bold;
+        font-size: 72px;
+
+        &::after{
+            content: "";
+            display: block;
+            background-color: var(--yellow);
+            width: 120px;
+            height: 6px;
+            border-radius: 2px;
+            margin-top: 8px;
+            margin-bottom: 55px;
+        }
+
+        @include for_breakpoint(1699){
+            font-size: 68px;
+        }
+
+        @include for_breakpoint(1399){
+            font-size: 60px;
+        }
+        
+        @include for_breakpoint(1199){
+            font-size: 50px;
+            &::after{
+                width: 100px;
+                margin-bottom: 45px;
+            }
+        }
+
+        @include for_breakpoint(991){
+            text-align: center;
+            margin-top: 40px;
+            
+            &::after{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @include for_breakpoint(480){
+            font-size: 40px;
+        }
+    }
+
+    p{
+        color: #626262;
+        font-family: barlow-medium;
+        font-size: 18px;
+        max-width: 585px;
+        strong{
+            font-family: barlow-bold;
+        }
+
+        @include for_breakpoint(1199){
+           font-size: 17px;
+        }
+
+        @include for_breakpoint(991){
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

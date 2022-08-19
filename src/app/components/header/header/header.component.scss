@@ -1,0 +1,241 @@
+@import "../../../../assets/sass/mixins";
+
+.header{
+    position: relative;
+    .container,
+    .container-fluid{
+        z-index: 2;
+    }
+    background-image: url(../../../../assets/images/superior-56-fachada.jpg);
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+    @include for_breakpoint(1599){
+        height: 900px;
+    }
+
+    @include for_breakpoint(1399){
+        height: 800px;
+    }
+
+    @include for_breakpoint(480){
+        height: 700px;
+    }
+
+
+    &::before{
+        content: "";
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgb(9, 79, 89);
+        opacity: 0.8;
+        width: 36%;
+        max-width: 705px;
+        height: 100%;
+        border-bottom-left-radius: 100px;
+
+        @include for_breakpoint(767){
+            width: 100%;
+            opacity: .4;
+            max-width: none;
+            border-bottom-right-radius: 100px;
+        }
+    }
+
+    .content-text{
+        border-left: 1px solid white;
+        margin-left: 28px;
+        margin-top: 7%;
+        padding-left: 2%;
+
+        @include for_breakpoint(767){
+            border: 0px;
+        }
+
+        @include for_breakpoint(480){
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-left: 0px;
+        }
+    }
+
+    span{
+        color: #ffcc66;
+        font-size: 24px;
+        letter-spacing: 9px;
+
+        @include for_breakpoint(767){
+            text-align: center;
+            display: block;
+        }
+
+        @include for_breakpoint(480){
+            font-size: 20px;
+        }
+    }
+
+    h1{
+        font-family: barlow-bold;
+        font-size: 72px;
+        color: white;
+
+        @include for_breakpoint(1599){
+            font-size: 68px;
+        }
+
+        @include for_breakpoint(1399){
+            font-size: 65px;
+        }
+
+        @include for_breakpoint(1199){
+            font-size: 60px;
+        }
+
+        @include for_breakpoint(991){
+            font-size: 56px;
+        }
+
+        @include for_breakpoint(767){
+            text-align: center;
+            font-size: 50px;
+        }
+
+        @include for_breakpoint(480){
+            font-size: 40px;
+        }
+    }
+
+    p{
+        font-size: 32px;
+        line-height: 1.2;
+        color: white;
+
+        @include for_breakpoint(1399){
+            font-size: 28px;
+        }
+
+        @include for_breakpoint(1199){
+            font-size: 26px;
+        }
+
+        @include for_breakpoint(991){
+            font-size: 24px;
+        }
+
+        @include for_breakpoint(767){
+            font-size: 22px;
+            text-align: center;
+        }
+    }
+
+    .btn-gold{
+        max-width: 335px;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 18px;
+        img{
+            max-width: 40px;
+            filter:  invert(100%) sepia(0%) saturate(2%) hue-rotate(54deg) brightness(110%) contrast(101%);;
+        }
+
+        @include for_breakpoint(1399){
+            max-width: 300px;
+            font-size: 17px;
+
+            img{
+                max-width: 35px;
+            }
+        }
+
+        @include for_breakpoint(767){
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .widget {
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 16px 4px rgba(51, 51, 51, 0.1);
+        position: absolute;
+        bottom: -12%;
+        right: 11%;
+        width: 480px;
+        height: 240px;
+        padding: 28px;
+
+        h2{
+            font-family: barlow-bold;
+            color: #333333;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .creditos{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            img{
+                width: 120px;
+                height: 120px;
+                border-radius: 10px;
+                background-color: rgb(248, 248, 248);
+                box-shadow: 0px 0px 16px 4px rgba(51, 51, 51, 0.1);
+            }
+        }
+
+        @include for_breakpoint(1399){
+            bottom: -20%;
+            width: 450px;
+            height: 230px;
+            padding: 22px;
+            h2{
+                font-size: 24px;
+            }
+
+            .creditos{
+                img{
+                    width: 110px;
+                    height: 110px;
+                }
+            }
+        }
+
+        @include for_breakpoint(991){
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 9;
+            bottom: -15%;
+
+            h2{
+                font-size: 24px;
+            }
+        }
+
+        @include for_breakpoint(480){
+            width: 90%;
+            height: 200px;
+            h2{
+                font-size: 20px;
+            }
+
+            .creditos{
+                
+                img{
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+}

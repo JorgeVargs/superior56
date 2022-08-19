@@ -1,0 +1,85 @@
+@mixin fonts($family, $path) {
+    @font-face {
+        font-family: $family;
+        src: url("#{$path}.eot");
+        src: url("#{$path}.eot?#iefix") format("embedded-opentype"), url("#{$path}.woff") format("woff"), url("#{$path}.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@mixin boxshadow($args...) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin placeholder($color, $f-size, $f-family) {
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color !important;
+        opacity: 1; /* Firefox */
+        font-size: $f-size;
+        font-family: $f-family;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color !important;
+        font-size: $f-size;
+        font-family: $f-family;
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color !important;
+        font-size: $f-size;
+        font-family: $f-family;
+    }
+}
+
+@mixin degradado($args...) {
+    background: -moz-linear-gradient($args);
+    background: -webkit-linear-gradient($args);
+    background: -ms-linear-gradient($args);
+    background: -o-linear-gradient($args);
+    background: linear-gradient($args);
+}
+
+@mixin img-degradado($url, $args...) {
+    background: url($url), -moz-linear-gradient($args);
+    background: url($url), -webkit-linear-gradient($args);
+    background: url($url), -ms-linear-gradient($args);
+    background: url($url), -o-linear-gradient($args);
+    background: url($url), linear-gradient($args);
+}
+
+// Media querys
+// $media_queries : (
+//     'mobile' : "(max-width: 479px)",
+//     'mobile2': "(max-width: 599px)",
+//     'tablet' : "(max-width: 767px)",
+//     'tablet2': "(max-width: 991px)",
+//     'desktop' : "(max-width:1199px)",
+//     'desktop1': "(max-width:1399px)",
+//     'desktop2' : "(max-width:1599px)"
+// );
+
+@mixin for_breakpoint($breakpoint) {
+    @media (max-width:#{$breakpoint}px){
+        @content;
+    }
+}

@@ -1,0 +1,30 @@
+@import '../../../assets/sass/mixins';
+
+footer {
+  padding: 50px 0px 0px 0px;
+  background-color: var(--gold-color);
+
+  img{
+    max-width: 154px;
+  }
+  p{
+    color: white;
+    font-family: barlow-regular;
+    font-size: 18px;
+  }
+
+  .leyenda-foot{
+    background-color: var(--blue-strong);
+    margin-top: 20px;
+    p{
+      text-align: center;
+      font-size: 16px;
+      font-family: barlow-medium;
+      margin: 0px;
+      padding: 22px 0px;
+      a{
+        color: white;
+      }
+    }
+  }
+}

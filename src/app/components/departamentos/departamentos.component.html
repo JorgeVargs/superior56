@@ -1,0 +1,136 @@
+<section id="departamentos" class="departamentos">
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Departamentos</h2>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-4 col-xl-6 order-1 order-lg-1">
+                <h3 class="caract">Características</h3>
+                <ul>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos01-metraje.svg" class="img-fluid" />
+                        </div>
+                        <p>44m2</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos02-recamara.svg" class="img-fluid" />
+                        </div>
+                        <p>2 recámaras</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos03-banios.svg" class="img-fluid" />
+                        </div>
+                        <p>1 baño</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos04-sala.svg" class="img-fluid" />
+                        </div>
+                        <p>Sala / Comedor</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos05-cocina.svg" class="img-fluid" />
+                        </div>
+                        <p>Cocina</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos06-lavado.svg" class="img-fluid" />
+                        </div>
+                        <p>Área de lavado</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos07-roof-garden.svg" class="img-fluid" />
+                        </div>
+                        <p>12 Roof Garden<br>privados</p>
+                    </li>
+                    <li>
+                        <div class="icon mx-auto">
+                            <img src="/assets/images/caracteristicas/icon-deptos08-estacionamiento.svg" class="img-fluid" />
+                        </div>
+                        <p>Estacionamientos<br>opcionales</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 order-3 order-lg-2">
+                <h3>Equipamiento</h3>
+                <ul class="lista">
+                    <li>Elevadores</li>
+                    <li>Cisterna para almacenamiento de agua potable</li>
+                    <li>Sistema alternativo de agua pluvial</li>
+                    <li>Gas natural</li>
+                    <li>Acceso vehicular automatizado</li>
+                    <li>Estacionamiento para discapacitados</li>
+                    <li>Acceso peatonal independiente</li>
+                    <li>Vigilancia las 24 horas</li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 order-4 order-lg-3">
+                <h3>Acabados</h3>
+                <ul class="lista">
+                    <li>Yeso en muros</li>
+                    <li>Cancelería de aluminio</li>
+                    <li>Lámparas de luz led</li>
+                    <li>Pisos de cerámica</li>
+                </ul>
+            </div>
+            <div class="col-12 order-2 order-lg-4">
+                <swiper 
+                    class="slider"
+                    [slidesPerView]="5" 
+                    [spaceBetween]=30
+                    [pagination]="{
+                        clickable: true
+                      }"
+                    [breakpoints]="{
+                        '320':{
+                            slidesPerView: 1
+                        },
+                        '480':{
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        '767':{
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        },
+                        '1199':{
+                            slidesPerView: 5,
+                            spaceBetween: 30
+                        }
+                    }">
+                    <ng-template swiperSlide>
+                        <img src="assets/images/galeria-departamentos/superior-56-deptos-interior1.jpg" class="img-fluid" alt="" />
+                    </ng-template>
+                    
+                    <ng-template swiperSlide>
+                        <img src="assets/images/galeria-departamentos/superior-56-deptos-interior2.jpg" class="img-fluid" alt="" />
+                    </ng-template>
+                    
+                    <ng-template swiperSlide>
+                        <img src="assets/images/galeria-departamentos/superior-56-deptos-interior3.jpg" class="img-fluid" alt="" />
+                    </ng-template>
+                    
+                    <ng-template swiperSlide>
+                        <img src="assets/images/galeria-departamentos/superior-56-deptos-interior4.jpg" class="img-fluid" alt="" />
+                    </ng-template>
+                    
+                    <ng-template swiperSlide>
+                        <img src="assets/images/galeria-departamentos/superior-56-deptos-interior5.jpg" class="img-fluid" alt="" />
+                    </ng-template>
+                  </swiper>
+            </div>
+        </div>
+        <div class="row">
+            <div class="leyenda d-flex align-items-center align-items-md-start  justify-content-center">
+                <img src="assets/images/iconos/icon-mano.svg" class="img-fluid" alt="" />
+                <p>Aceptamos créditos <strong>INFONAVIT</strong>, <strong>COFINAVIT</strong>, <strong>FOVISSSTE</strong> O <strong>BANCARIOS</strong> y te asesoramos en tu trámite.</p>
+            </div>
+        </div>
+    </div>
+</section>

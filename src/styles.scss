@@ -1,1 +1,178 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import "assets/sass/mixins";
+// @import '~swiper/css/bundle';
+
+@import '~swiper/css';
+@import '~swiper/css/pagination';
+@import '~swiper/css/navigation';
+
+
+@include fonts('barlow-regular','/assets/fonts/Barlow-Regular');
+@include fonts('barlow-medium','/assets/fonts/Barlow-Medium');
+@include fonts('barlow-bold','/assets/fonts/Barlow-Bold');
+@include fonts('barlow-semibold','/assets/fonts/Barlow-SemiBold');
+
+:root{
+    --blue : #48a9a6;
+    --blue-light: #e9f7f7;
+    --blue-strong: #094f59;
+    --gold-color: #c09e58;
+    --yellow: #ffcc66;
+    --black: #333333;
+    --cyan : #4caea9;
+}
+
+body{
+    font-family: barlow-regular;
+    background-color: #f8f8f8;
+
+    p{
+        color: var(--black);
+    }
+}
+
+.btn-gold{
+    background-color: var(--gold-color);
+    color: white;
+    font-family: barlow-semibold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 0px;
+
+    &:hover{
+        background-color: var(--blue);
+        color: white;
+    }
+}
+
+.container-fluid{
+    &.custom{
+        padding: 0px 12%;
+    }
+}
+
+.leyenda{
+    background-color: var(--blue-strong);
+    color: white;
+    font-family: barlow-regular;
+    font-size: 24px;
+    text-align: center;
+    padding: 50px 0px;
+    margin-top: 5%;
+    img{
+        max-width: 50px;
+        filter: invert(91%) sepia(49%) saturate(5432%) hue-rotate(310deg) brightness(105%) contrast(100%);
+        margin: 0px 18px;
+    }
+    p{
+        margin: 0px;
+        color: white;
+    }
+
+    @include for_breakpoint(1199){
+        font-size: 20px;
+    }
+
+    @include for_breakpoint(991){
+        padding: 50px;
+        align-items: flex-start;
+    }
+
+    @include for_breakpoint(576){
+        padding: 30px;
+        font-size: 17px;
+    }
+}
+
+// slider de componente depto-muestra
+
+.slider-muestra{
+    margin-top: 5%;
+    padding-bottom: 3%;
+
+    @include for_breakpoint(767){
+        padding-bottom: 6%;
+    }
+
+    .swiper-button-prev{
+        width: 60px;
+        height: 60px;
+        background-color: rgb(98, 98, 98,0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 12%;
+        &::after{
+            content: "";
+            filter:  invert(100%) sepia(0%) saturate(2%) hue-rotate(54deg) brightness(110%) contrast(101%);;
+            width: 40px;
+            height: 40px;
+            background-image: url(assets/images/iconos/icon-flecha-izq.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .swiper-button-next{
+        @extend .swiper-button-prev;
+        left: auto;
+        right: 12%;
+
+        &::after{
+            background-image: url(assets/images/iconos/icon-flecha-der.svg);
+        }
+    }
+
+    
+    @include for_breakpoint(1199){
+        .swiper-button-*{
+            width: 50px;
+            height: 50px;
+        }
+
+        [class^="swiper-button"]{
+            width: 50px;
+            height: 50px;
+
+            &::after{
+                width: 35px;
+                height: 35px;
+            }
+        }
+       }
+
+    .swiper-pagination{
+        .swiper-pagination-bullet{
+            width: 10px;
+            height: 10px;
+            background-color:#aa8e5c;
+            opacity: .3;
+            position: relative;
+            margin: 0px 10px;
+            &.swiper-pagination-bullet-active{
+                opacity: 1;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    left: -5px;
+                    top: -5px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    border: 1px solid #aa8e5c;
+                }
+            }
+        }
+
+        @include for_breakpoint(1199){
+            bottom: 0px;
+           }
+
+          
+    }
+}

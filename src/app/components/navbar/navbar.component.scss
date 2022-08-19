@@ -1,0 +1,214 @@
+@import "../../../assets/sass/mixins";
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.navbar {
+  // height: 120px;
+  background-color: transparent;
+
+  // @include boxshadow(0px 11px 15px -6px rgba(0, 0, 0, 0.6));
+  @include transition(height .3s linear);
+
+  @include for_breakpoint(991) {
+    height: 90px;
+  }
+
+  .navbar-brand {
+    img {
+      max-width: 200px;
+    }
+
+    @include for_breakpoint(991) {
+      text-align: center;
+
+      img {
+        width: 60%;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    padding: 0px;
+    width: 50px;
+    height: 40px;
+    position: relative;
+    margin-right: 20px;
+    color: transparent;
+    background-color: var(--blue);
+
+    .menu-icon {
+      width: 40px;
+      height: 4px;
+      background-color: white;
+      border-radius: 5px;
+      transition: all .2s linear;
+      display: block;
+      margin: 0 auto;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        background-color: white;
+        top: 4px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        border-radius: 5px;
+        transition: all .2s linear;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        background-color: white;
+        bottom: 4px;
+        position: absolute;
+        border-radius: 5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: all .2s linear;
+      }
+    }
+    
+    &.active{
+        .menu-icon{
+            background-color: transparent;
+
+            &::before{
+                top: 16px;
+                @include transform(rotate(45deg))
+            }
+
+            &::after{
+                top: 3px;
+                @include transform(rotate(-45deg))
+            }
+        }
+    }
+  }
+
+
+  .collapse {
+    .navbar-nav{
+      display: flex;
+      align-items: center;
+      .nav-item {
+        &:not(:last-of-type){
+          margin: 0px 18px;
+        }
+  
+        .nav-link {
+          color: white;
+          font-size: 18px;
+          font-family: barlow-medium;
+          text-transform: uppercase;
+          line-height: 1.333;
+          padding: 0px;
+        }
+
+  
+        &.whats{
+          width: 80px;
+          margin-left: 80px;
+          @include transition(height .3s linear);
+          img{
+            max-width: 70px;
+          }
+          &:hover{
+            &::after{
+              background-color: transparent;
+            }
+          }
+        }
+  
+        &.active {
+          &::after {
+            background-color: var(--blue);
+          }
+        }
+  
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 3px;
+        }
+  
+        &:hover {
+          &::after {
+            background-color: var(--blue);
+          }
+        }
+      }
+      
+      @include for_breakpoint(991) {
+         background-color: white;
+          padding: 5%;
+          @include boxshadow(0px 11px 15px -6px rgb(0 0 0 / 60%));
+         .navbar-nav{
+             text-align: center;
+  
+             .nav-item{      
+                 margin: 10px 0px;
+              &::after{
+                  width:20%;
+                  margin: auto;
+              }
+  
+              &.btn-blue{
+                  width: 200px;
+                  margin: auto;
+                  text-align: center;
+                  &::after{
+                      display: none;
+                  }
+                  a{
+                      display: block;
+                      width: 100%;
+                  }
+              }
+             }
+         }
+      }
+    }
+  }
+
+  &.small {
+    height: 100px;
+    background-color: var(--blue-strong);
+
+    .navbar-brand {
+      img {
+        max-width: 135px;
+      }
+    }
+
+    .collapse {
+      .nav-item {
+        .nav-link {
+          font-size: 18px;
+        }
+
+        &:hover{
+          .nav-link{
+            color: var(--gold-color);
+          }
+        }
+
+        &.whats{
+          img{
+            max-width: 55px !important;
+          }
+        }
+      }
+    }
+  }
+}
