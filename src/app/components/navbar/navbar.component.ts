@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -11,30 +13,28 @@ export class NavbarComponent {
   public isShown: boolean;
   public winWidth: number = 992;
 
-  constructor() {
+  constructor(private location:Location) {
     this.isShown = false;
+    if(this.location.path() != ''){
+      this.scrolled = true;
+    }
+    console.log(this.location.path())
   }
 
   changeState() {
     this.isShown = !this.isShown;
   }
 
-  // currentSection = 'section1';
-
-  // onSectionChange(sectionId: string) {
-  //   this.currentSection = sectionId;
-  //   console.log(this.currentSection);
-  // }
-
   @HostListener('window:scroll', []) onWindowScroll() {
-    this.scrolled = window.pageYOffset > 150;
-    if (this.scrolled) {
-      this.isShown = false;
-    } else {
-      this.scrolled = false;
-    }
+    if(this.location.path() == ''){
+      this.scrolled = window.pageYOffset > 150;
 
-    console.log(this.scrolled);
+      if (this.scrolled) {
+        this.isShown = false;
+      } else{
+        this.scrolled = false;
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])

@@ -10,12 +10,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6 p-0 mt-5 mb-5">
+            <div class="col-lg-10 col-xl-6 p-0 mt-5 mb-5 position-relative d-flex align-items-center">
                 <div class="back-image">
                     <img src="assets/images/superior-56-mapa-referencias.jpg" class="img-fluid" />
                 </div>
             </div>
-            <div class="col-2 d-flex flex-column align-items-center">
+            <div class="col-6 col-sm-4 col-xl-2 d-flex flex-column align-items-left align-items-sm-center">
                 <h4>Centros comerciales</h4>
                 <ol class="green">
                     <li>Plaza Azcapotzalco</li>
@@ -28,7 +28,7 @@
                     <li>Plaza Antara / Carso</li>
                 </ol>
             </div>
-            <div class="col-2 d-flex flex-column align-items-center">
+            <div class="col-6 col-sm-4 col-xl-2 d-flex flex-column align-items-left align-items-sm-center">
                 <h4>UNIVERSIDADES</h4>
                 <ol class="blue">
                     <li>UNITEC Cuitláhuac</li>
@@ -39,7 +39,7 @@
                     <li>Instituto DCK Formación Profesional y de Negocios</li>
                 </ol>
             </div>
-            <div class="col-2 d-flex flex-column align-items-center">
+            <div class="col-12 col-sm-4 col-xl-2 d-flex flex-column align-items-center align-items-sm-center">
                 <h4>HOSPITALES</h4>
                 <ol class="red">
                     <li>ISSSTE Hospital General Tacuba</li>
@@ -54,30 +54,56 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            <div class="col-3">
-                <div class="image">
-                    <img src="assets/images/ubicacion/superior-56-lugares-parque-bicentenario.jpg" class="img-fluid" alt="Parque Bicentenario" />
-                    <div class="nombre">
-                        Parque Bicentenario
+
+            <div class="col-12 col-md-9">
+                <swiper 
+                class="slide-referencias"
+                [slidesPerView]="3" 
+                [spaceBetween]=30
+                [pagination]="{
+                    clickable: true
+                  }"
+                [breakpoints]="{
+                    '320':{
+                        slidesPerView: 1
+                    },
+                    '767':{
+                        slidesPerView: 2
+                    },
+                    '1199':{
+                        slidesPerView: 3
+                    }
+                }">
+              
+                <ng-template swiperSlide>
+                    <div class="image">
+                        <img src="assets/images/ubicacion/superior-56-lugares-parque-bicentenario.jpg" class="img-fluid" alt="Parque Bicentenario" />
+                        <div class="nombre">
+                            Parque Bicentenario
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="image">
-                    <img src="assets/images/ubicacion/superior-56-lugares-museo-soumaya.jpg" class="img-fluid" alt="Museo Soumaya" />
-                    <div class="nombre">
-                        Museo Soumaya
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="image">
+                        <img src="assets/images/ubicacion/superior-56-lugares-museo-soumaya.jpg" class="img-fluid" alt="Museo Soumaya" />
+                        <div class="nombre">
+                            Museo Soumaya
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="image">
-                    <img src="assets/images/ubicacion/superior-56-lugares-barrio-tacuba.jpg" class="img-fluid" alt="Barrio Mágico de Tacuba" />
-                    <div class="nombre">
-                        Barrio Mágico de Tacuba
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="image">
+                        <img src="assets/images/ubicacion/superior-56-lugares-barrio-tacuba.jpg" class="img-fluid" alt="Barrio Mágico de Tacuba" />
+                        <div class="nombre">
+                            Barrio Mágico de Tacuba
+                        </div>
                     </div>
-                </div>
+                </ng-template>
+                
+              
+              </swiper>
             </div>
+           
         </div>
     </div>
 </section>

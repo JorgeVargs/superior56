@@ -7,6 +7,7 @@ export const environment = {
   recaptcha: {
     siteKey: '6LcMAoEhAAAAAAYizCWUCsdMROd5tfRCQxXdiEin',
   },
+  api_smtp :'http://superior56.loc/PHP/'
 };
 
 /*

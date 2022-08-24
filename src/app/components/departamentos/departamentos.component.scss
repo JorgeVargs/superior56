@@ -211,11 +211,12 @@
         }
     }
 
-    .slider{
+    .slider-depto{
         margin-top: 40px;
 
         @include for_breakpoint(991){
             margin-bottom: 55px;
         }
+        
     }
 }

@@ -42,7 +42,9 @@ body{
     padding: 10px 20px;
     border: 0px;
 
-    &:hover{
+    &:hover,
+    &:active,
+    &:focus{
         background-color: var(--blue);
         color: white;
     }
@@ -51,6 +53,14 @@ body{
 .container-fluid{
     &.custom{
         padding: 0px 12%;
+
+        @include for_breakpoint(1499){
+            padding: 0px 8%;
+        }
+
+        @include for_breakpoint(480){
+            padding: 0px 3%;
+        }
     }
 }
 
@@ -70,6 +80,10 @@ body{
     p{
         margin: 0px;
         color: white;
+
+        strong{
+            font-family: barlow-bold;
+        }
     }
 
     @include for_breakpoint(1199){
@@ -96,6 +110,10 @@ body{
     @include for_breakpoint(767){
         padding-bottom: 6%;
     }
+
+    @include for_breakpoint(480){
+        padding-bottom: 9%;   
+    } 
 
     .swiper-button-prev{
         width: 60px;
@@ -169,10 +187,88 @@ body{
             }
         }
 
-        @include for_breakpoint(1199){
+        @include for_breakpoint(1399){
             bottom: 0px;
-           }
+        }    
+    }
+}
 
-          
+// slider ubicacion
+
+.slide-referencias{
+    padding-bottom:70px;
+
+    .swiper-pagination{
+        .swiper-pagination-bullet{
+            width: 10px;
+            height: 10px;
+            background-color:#aa8e5c;
+            opacity: .3;
+            position: relative;
+            margin: 0px 10px;
+            &.swiper-pagination-bullet-active{
+                opacity: 1;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    left: -5px;
+                    top: -5px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    border: 1px solid #aa8e5c;
+                }
+            }
+        }
+
+        @include for_breakpoint(1399){
+            bottom: 0px;
+           }     
+    }
+}
+
+
+//slider departamentos
+
+.slider-depto{
+    .swiper-pagination{
+        .swiper-pagination-bullet{
+            width: 10px;
+            height: 10px;
+            background-color:#aa8e5c;
+            opacity: .3;
+            position: relative;
+            margin: 0px 10px;
+            &.swiper-pagination-bullet-active{
+                opacity: 1;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    left: -5px;
+                    top: -5px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    border: 1px solid #aa8e5c;
+                }
+            }
+        }    
+    }
+
+    @include for_breakpoint(1199){
+        padding-bottom: 4%;
+        .swiper-pagination{
+            bottom: 0px;
+        }
+    }
+
+    @include for_breakpoint(767){
+        padding-bottom: 6%;
+    }
+
+    @include for_breakpoint(480){
+        padding-bottom: 9%;
     }
 }

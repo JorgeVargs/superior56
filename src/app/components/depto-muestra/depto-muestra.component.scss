@@ -69,6 +69,10 @@
        margin: auto;
        color: var(--black);
 
+       strong{
+        font-family: barlow-semibold;
+       }
+
        &.description{
         font-size: 18px;
         font-family: barlow-medium;

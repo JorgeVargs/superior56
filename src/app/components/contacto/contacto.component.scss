@@ -1,18 +1,24 @@
 @import '../../../assets/sass/mixins';
 
-.contacto{
+.contacto {
     padding: 115px 0px;
     background-image: url(../../../assets/images/superior-56-contacto-filtro.jpg);
     background-position: center;
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
-    h2{
+
+    @include for_breakpoint(991){
+        padding: 45px 0px 90px;
+    }
+
+    h2 {
         color: white;
         font-size: 72px;
         font-family: barlow-bold;
         display: inline-block;
-        &::after{
+
+        &::after {
             content: "";
             display: block;
             background-color: var(--yellow);
@@ -24,83 +30,147 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        @include for_breakpoint(1699){
+            font-size: 68px;
+        }
+
+        @include for_breakpoint(1399){
+            font-size: 60px;
+        }
+        
+        @include for_breakpoint(1199){
+            font-size: 50px;
+            &::after{
+                width: 100px;
+                margin-bottom: 45px;
+            }
+        }
+
+        @include for_breakpoint(991){
+            text-align: center;
+            margin-top: 40px;
+            
+            &::after{
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 25px;
+            }
+        }
+
+        @include for_breakpoint(767){
+            margin-top: 20px;
+            &::after{
+                margin-bottom: 30px;
+            }
+        }
+        
+        @include for_breakpoint(480){
+            font-size: 40px;
+        }
     }
 
-    .contact-no{
+    .contact-no {
         display: flex;
         flex-direction: row;
-        img{
+
+        img {
             width: 50px;
             height: auto;
             filter: invert(58%) sepia(13%) saturate(1457%) hue-rotate(130deg) brightness(94%) contrast(86%);
             margin-right: 15px;
         }
 
-        a{
+        a {
             text-decoration: none;
             font-family: barlow-semibold;
             font-size: 32px;
             text-align: left;
             color: white;
             line-height: 1.1;
-            p{
+
+            p {
                 color: white;
                 font-family: barlow-regular;
                 font-size: 18px;
                 margin: 0px;
             }
         }
+
+        @include for_breakpoint(1399){
+            a{
+                font-size: 28px;
+            }
+        }
+
+        @include for_breakpoint(991){
+            img{
+                width: 40px;
+            }
+        }
+
+        @include for_breakpoint(767){
+            margin-bottom: 40px;
+        }
     }
 
-    h4{
+    h4 {
         color: var(--gold-color);
         font-family: barlow-semibold;
         font-size: 30px;
         text-align: left;
         margin-top: 50px;
+
+        @include for_breakpoint(767){
+            margin-top: 30px;
+        }
     }
 
 
-    form{
+    form {
         text-align: left;
-        label{
+
+        label {
             font-size: 22px;
             color: white;
         }
-    
+
         input[type="email"],
         input[type="text"],
         input[type="tel"],
-        textarea{
+        textarea {
             border-radius: 0px;
-            border:0px;
+            border: 0px;
             border-bottom: 1px solid white;
             background-color: transparent;
             color: white;
             font-size: 20px;
             font-family: barlow-semibold;
+
             &:active,
-            &:focus{
+            &:focus {
                 box-shadow: none;
                 border-color: var(--gold-color);
                 border-width: 2px;
             }
 
-            @include placeholder(white,20px,barlow-regular);
+            @include placeholder(white, 20px, barlow-regular);
         }
 
-        .form-check{
+        .form-check {
             margin-top: 20px;
-            input{
+
+            input {
                 margin-top: 8px;
                 border-radius: 0px;
             }
-            label{
+
+            label {
                 font-family: barlow-regular;
                 counter-reset: white;
                 font-size: 20px;
 
-                a{
+                a {
                     color: white;
                     text-decoration: underline;
                 }
@@ -108,7 +178,7 @@
         }
 
 
-        p{
+        p {
             font-family: barlow-regular;
             color: var(--gold-color);
             font-size: 20px;
@@ -116,7 +186,7 @@
             margin-top: 20px;
         }
 
-        .btn-gold{
+        .btn-gold {
             width: 330px;
             height: 60px;
             font-size: 18px;
@@ -126,5 +196,32 @@
             display: block;
             margin-top: 50px;
         }
+
+        @include for_breakpoint(991){
+            .form-check{
+                label{
+                    font-size: 18px;
+                }
+            }
+            .btn-gold{
+                width: 240px;
+            }
+        }
+
+        @include for_breakpoint(767){
+            .recaptcha{
+                margin: 20px auto;
+            }
+
+            .btn-gold{
+                margin-right: auto;
+            }
+        }
     }
+}
+
+
+re-captcha.is-invalid>div {
+    border: 1px solid #dc3545 !important;
+    border-radius: 0.2rem;
 }

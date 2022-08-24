@@ -27,4 +27,31 @@ footer {
       }
     }
   }
+
+  @include for_breakpoint(1199){
+    p{
+      font-size: 17px;
+    }
+  }
+
+  @include for_breakpoint(767){
+    img{
+      margin: auto;
+      display: block;
+    }
+
+    p{
+      font-size: 16px;
+    }
+
+    .leyenda-foot{
+      p{
+        font-size: 15px;
+      }
+    }
+  }
+
+  @include for_breakpoint(575){
+    padding: 40px 0px 0px 0px;
+  }
 }
